@@ -1,43 +1,38 @@
-// const searchButton = document.getElementById('search-button');
-// const searchInput = document.getElementById('search-input');
-
-// searchButton.addEventListener('click', function () {
-//     const searchText = searchInput.value;
 
 
+//connect enter button
 
-// })
+var searchbutton = document.getElementById("search-button");
+var txtbutton = document.getElementById("search-input");
 
-// const loadCountries = () => {
-//     const url = `https://restcountries.eu/rest/v2/name/${searchText}`
-//     fetch(url)
-//         .then(res => res.json())
-//         .then(data => console.log(data))
-// }
-// loadCountries()
-// const displayCountries=()=>{
+txtbutton.addEventListener("keypress", function (event) {
+    // event.preventDefault();
+    if (event.key === "Enter") {
+        searchbutton.click();
+    }
 
-
-
-// }
-
-
+});
+//add spinner
+const toogleSpinner = (displayStyle) => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
+//load country
 const searchcountries = () => {
     const searchInput = document.getElementById('search-input');
     const searchText = searchInput.value;
     console.log(searchText)
 
 
-
+    //clear inputfeild
     searchInput.value = ''
-
+    //load data
     const url = `https://restcountries.eu/rest/v2/name/${searchText}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayCountries(data))
 
 }
-
+//display data and appenddiv
 const displayCountries = countries => {
     const searchButton = document.getElementById('search-result');
     countries.forEach(country => {

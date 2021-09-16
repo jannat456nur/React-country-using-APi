@@ -17,6 +17,10 @@
             color: white;
 
         }
+
+        .spinner {
+            display: none;
+        }
     </style>
     <!-- custom css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -34,6 +38,13 @@
                 aria-label="Recipient's username" aria-describedby="button-addon2">
             <button onclick="searchcountries()" class="btn btn-outline-secondary buton" type="button"
                 id="search-button">Button</button>
+        </div>
+        <div id="spinner">
+            <div class="text-center spinner">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </div>
 
     </header>
